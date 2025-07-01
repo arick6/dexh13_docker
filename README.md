@@ -32,7 +32,7 @@ sudo systemctl enable docker
 sudo docker --version
 ```
 ## 7. 构建 Docker 镜像
-在项目根目录（包含 `Dockerfile`、`gsl.tar.gz`、`eigen-3.3.7.tar.gz`、SDK 安装包等文件）下运行：
+在项目根目录（包含 `Dockerfile`、`gsl.tar.gz`、`eigen-3.3.7.tar.gz`、`pxdex-1.1.0-cp310-cp310-linux_x86_64.whl`、`DexHandSDK-1.1.0-Linux.deb`、SDK 安装包等文件）下运行：
 ```bash
 docker build -t dexh13-ubuntu:22.04 .
 ```
