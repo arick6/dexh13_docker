@@ -1,4 +1,4 @@
-# dexh13-ubuntu:22.04 Docker 镜像使用说明
+# Docker 镜像使用说明
 
 ### Ubuntu 下安装
 
