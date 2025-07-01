@@ -1,13 +1,13 @@
 # dexh13-ubuntu:22.04 Docker 镜像使用说明
 
-## 一、安装 Docker
-
 ### Ubuntu 下安装
 
 
 # 1. 更新包索引并安装依赖项
 ```bash
 sudo apt update
+```
+```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 
@@ -31,3 +31,23 @@ sudo systemctl enable docker
 ```bash
 sudo docker --version
 ```
+# 7. 构建 Docker 镜像
+在项目根目录（包含 `Dockerfile`、`gsl.tar.gz`、`eigen-3.3.7.tar.gz`、SDK 安装包等文件）下运行：
+```bash
+docker build -t dexh13-ubuntu:22.04 .
+```
+# 7. 运行并进入容器
+启动容器(没有添加相机访问权限):
+```bash
+docker run -it \
+  --name dexh13 \
+  --device=/dev/ttyUSB0 \
+  --group-add dialout \
+  -v /path/to/examples/dexh13:/app/ \
+  dexh13-ubuntu:22.04
+```
+
+# Docker 构建缓慢或失败
+可用鱼香的一键docker配置
+
+
